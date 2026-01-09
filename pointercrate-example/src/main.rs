@@ -148,7 +148,7 @@ async fn rocket() -> _ {
         // Tab where users can modify their own accounts
         .with_page(ProfileTab)
         // Tab where users can initiate player claims and manage their claimed players
-        .with_page(ListIntegrationTab("https://discord.gg/tMBzYP77ag"))
+        .with_page(ListIntegrationTab("https://discord.gg/pointercrate"))
         // Tab where website moderators can manage permissions. 
         // The vector below specified which permissions a user needs to have for the tab to be displayed.
         .with_page(UsersTab(vec![MODERATOR, LIST_ADMINISTRATOR]))
@@ -193,7 +193,7 @@ async fn rocket() -> _ {
 fn page_configuration() -> PageConfiguration {
     // Define a navigation bar with only two items, a link to the user account page,
     // and a link to your demonlist.
-    let nav_bar = NavigationBar::new("/static/images/path/to/your/logo.png")
+    let nav_bar = NavigationBar::new("/static/core/images/logo.png")
         .with_item(
             TopLevelNavigationBarItem::new(
                 Some("/demonlist/"),
@@ -224,11 +224,11 @@ fn page_configuration() -> PageConfiguration {
     // displayed below it, side-by-side, and potentially some social media links to
     // your team
     let footer = Footer::new(html! {
-        "© Copyright <year> <your website>"
+        "© Copyright 2024 pointercrate"
         br;
         "All rights reserved"
         br;
-        "<your website> and <your demonlist> are in no way affiliated with RobTopGamesAB ® or pointercrate.com"
+        "pointercrate and the pointercrate demonlist are in no way affiliated with RobTopGamesAB ®"
     })
     // Add a column with links for various list-related highlights
     .with_column(FooterColumn::LinkList {
@@ -249,9 +249,9 @@ fn page_configuration() -> PageConfiguration {
     .with_link("https://twitter.com/stadust1971", tr("footer-tweet.developer"));
 
     // Stitching it all together into a page configuration
-    PageConfiguration::new("<your website name here>", nav_bar, footer)
+    PageConfiguration::new("pointercrate", nav_bar, footer)
         // Used for the HTML "author" meta tag
-        .author("your name")
+        .author("stadust")
         // Used for the HTML "keywords" meta tag
-        .keywords("Your SEO keywords here")
+        .keywords("geometry dash, demonlist, extreme demons, pointercrate")
 }

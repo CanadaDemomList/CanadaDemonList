@@ -1,0 +1,12 @@
+[package]
+name = "vercel-handler"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+# Note: vercel_runtime doesn't exist - this is a placeholder
+# You would need to use Vercel's actual Rust runtime or create a custom adapter
